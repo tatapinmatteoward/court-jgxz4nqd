@@ -1,0 +1,224 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Player Profiles - CourtVision Daily";
+const pageDescription = "Dive into in-depth basketball player profiles featuring stats, career highlights, and expert analysis from CourtVision Daily, your go-to source for dynamic insights on NBA stars and rising talents.";
+
+const playerProfiles = [
+  {
+    id: 1,
+    name: "Luka Doncic",
+    position: "Point Guard",
+    team: "Dallas Mavericks",
+    avgPoints: 30.2,
+    avgRebounds: 9.1,
+    avgAssists: 8.9,
+    imageUrl: "/players/luka-doncic.jpg"
+  },
+  {
+    id: 2,
+    name: "Tyrese Maxey",
+    position: "Guard",
+    team: "Philadelphia 76ers",
+    avgPoints: 22.1,
+    avgRebounds: 4.8,
+    avgAssists: 4.2,
+    imageUrl: "/players/tyrese-maxey.jpg"
+  },
+  {
+    id: 3,
+    name: "Zion Williamson",
+    position: "Forward",
+    team: "New Orleans Pelicans",
+    avgPoints: 26.8,
+    avgRebounds: 8.7,
+    avgAssists: 4.5,
+    imageUrl: "/players/zion-williamson.jpg"
+  },
+  {
+    id: 4,
+    name: "Stephen Curry",
+    position: "Guard",
+    team: "Golden State Warriors",
+    avgPoints: 28.1,
+    avgRebounds: 6.2,
+    avgAssists: 6.8,
+    imageUrl: "/players/stephen-curry.jpg"
+  }
+];
+
+const features = [
+  {
+    icon: "fas fa-chart-line",
+    title: "Unrivaled Depth",
+    text: "From rookie sensations to NBA legends, discover detailed breakdowns of playing styles, strengths, and pivotal moments."
+  },
+  {
+    icon: "fas fa-brain",
+    title: "Data-Driven Insights",
+    text: "Powered by advanced analytics, including player efficiency ratings, advanced metrics, and performance trends."
+  },
+  {
+    icon: "fas fa-user-tie",
+    title: "Expert Commentary",
+    text: "Our team of analysts provides context on how players shape teams and the league's evolution."
+  },
+  {
+    icon: "fas fa-film",
+    title: "Multimedia Magic",
+    text: "Engage with highlight videos, interactive charts, and exclusive content not available elsewhere."
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-r from-[#0f172a] to-[#22c55e] py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('/pattern.svg')] bg-repeat"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+          Player Profiles
+        </h1>
+        <p class="text-xl md:text-2xl text-[#e2e8f0] mb-8 max-w-2xl mx-auto">
+          Dive into in-depth basketball player profiles featuring stats, career highlights, and expert analysis
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="px-8 py-3 bg-white text-[#0f172a] font-bold rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+            Explore Profiles
+          </button>
+          <button class="px-8 py-3 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white/10 transition-all duration-300">
+            View Stats
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mb-4">Why Explore Our Player Profiles?</h2>
+        <div class="w-24 h-1 bg-[#22c55e] mx-auto rounded"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {features.map((feature, index) => (
+          <div key={index} class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+            <div class="w-16 h-16 rounded-full bg-[#22c55e]/10 flex items-center justify-center mb-6">
+              <i class={`${feature.icon} text-2xl text-[#22c55e]`}></i>
+            </div>
+            <h3 class="text-xl font-bold text-[#0f172a] mb-3">{feature.title}</h3>
+            <p class="text-gray-600">{feature.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Player Profiles Grid -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mb-4">Featured Players</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Discover the stories, statistics, and impact of basketball's elite athletes</p>
+        <div class="w-24 h-1 bg-[#22c55e] mx-auto rounded mt-4"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {playerProfiles.map((player) => (
+          <div key={player.id} class="group">
+            <div class="bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-lg overflow-hidden border border-gray-100 transform transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2">
+              <div class="relative">
+                <div class="bg-gray-200 border-2 border-dashed rounded-t-2xl w-full h-64" />
+                <div class="absolute top-4 right-4 bg-[#22c55e] text-white text-sm font-bold px-3 py-1 rounded-full">
+                  {player.position}
+                </div>
+              </div>
+              
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-3">
+                  <h3 class="text-xl font-bold text-[#0f172a]">{player.name}</h3>
+                  <span class="text-xs bg-gray-100 text-gray-800 px-2 py-1 rounded">{player.team}</span>
+                </div>
+                
+                <div class="space-y-2 mb-6">
+                  <div class="flex justify-between text-sm">
+                    <span class="text-gray-500">PPG</span>
+                    <span class="font-bold">{player.avgPoints}</span>
+                  </div>
+                  <div class="flex justify-between text-sm">
+                    <span class="text-gray-500">RPG</span>
+                    <span class="font-bold">{player.avgRebounds}</span>
+                  </div>
+                  <div class="flex justify-between text-sm">
+                    <span class="text-gray-500">APG</span>
+                    <span class="font-bold">{player.avgAssists}</span>
+                  </div>
+                </div>
+                
+                <button class="w-full py-3 bg-[#0f172a] text-white font-medium rounded-lg hover:bg-[#1e293b] transition-colors duration-300">
+                  View Full Profile
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats & Highlights -->
+  <section class="py-16 bg-gradient-to-r from-[#0f172a] to-[#1e293b] text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Statistics That Tell the Story</h2>
+        <p class="text-gray-300 mb-12 max-w-2xl mx-auto">
+          Our advanced analytics reveal more than just numbers. See how player performance translates to team success in real-time.
+        </p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+            <div class="text-4xl font-bold text-[#22c55e] mb-2">85%</div>
+            <div class="text-lg">Player Efficiency Rating Improvement</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+            <div class="text-4xl font-bold text-[#22c55e] mb-2">127K+</div>
+            <div class="text-lg">Active Fans Following Profiles</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+            <div class="text-4xl font-bold text-[#22c55e] mb-2">24/7</div>
+            <div class="text-lg">Analysis Coverage</div>
+          </div>
+        </div>
+        
+        <button class="px-8 py-4 bg-transparent border-2 border-[#22c55e] text-[#22c55e] font-bold rounded-lg hover:bg-[#22c55e]/10 transition-all duration-300 inline-flex items-center">
+          <span>Explore Advanced Metrics</span>
+          <i class="fas fa-arrow-right ml-2"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center bg-gradient-to-r from-[#0f172a] to-[#22c55e] rounded-2xl p-12 text-white">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Stay Ahead of the Game</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">
+          Subscribe to CourtVision Daily for real-time player updates, breaking news, and exclusive content.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <input type="email" placeholder="Your email address" class="px-6 py-3 rounded-lg text-gray-800 w-full sm:w-auto max-w-md" />
+          <button class="px-8 py-3 bg-white text-[#0f172a] font-bold rounded-lg hover:bg-gray-100 transition-all duration-300">
+            Subscribe Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,190 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Latest Basketball News";
+const pageDescription = "Catch up on the hottest updates from the NBA, including game recaps, player trades, and expert analysis from CourtVision Daily.";
+
+const breakingNews = {
+  headline: "NBA Playoffs Heat Up",
+  summary: "The NBA playoffs are in full swing, delivering edge-of-your-seat action across the league. As teams battle for supremacy, CourtVision Daily brings you the latest insights and analysis.",
+  featuredImage: "/images/playoff-action.jpg"
+};
+
+const latestArticle = {
+  title: "Lakers Edge Warriors in Thriller",
+  excerpt: "In a nail-biting overtime clash, the Los Angeles Lakers defeated the Golden State Warriors 115-112. LeBron James dropped 32 points and 10 assists, while Steph Curry's last-second three-pointer fell just short.",
+  date: "May 15, 2023",
+  author: "Sarah Mitchell",
+  readTime: "4 min read"
+};
+
+const highlights = [
+  "Anthony Davis dominated the paint with 28 points and 15 rebounds.",
+  "Warriors' bench struggled, scoring only 22 points.",
+  "Lakers improve to 3-1 in the series; next game Tuesday in LA."
+];
+
+const expertOpinion = {
+  quote: "This series is a classic rivalry reborn. LeBron's leadership is shining brighter than ever in these crucial moments.",
+  author: "Mia Thompson, Senior Analyst"
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-r from-[#0f172a] to-[#1e293b] py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEuNSIgZmlsbD0iIzIyYzU1ZSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')]"></div>
+    </div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <span class="inline-block px-4 py-1 bg-[#22c55e] text-black font-semibold rounded-full text-sm mb-4">BREAKING NEWS</span>
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          {breakingNews.headline}
+        </h1>
+        <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+          {breakingNews.summary}
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="px-8 py-3 bg-[#22c55e] hover:bg-green-600 text-white font-bold rounded-full transition-all duration-300 transform hover:scale-105">
+            Read Full Story
+          </button>
+          <button class="px-8 py-3 border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-[#0f172a] transition-all duration-300">
+            Subscribe to Updates
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Article Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="flex items-center text-sm text-gray-500 mb-4">
+          <span>{latestArticle.date}</span>
+          <span class="mx-2">•</span>
+          <span>By {latestArticle.author}</span>
+          <span class="mx-2">•</span>
+          <span>{latestArticle.readTime}</span>
+        </div>
+        
+        <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mb-6">
+          {latestArticle.title}
+        </h2>
+        
+        <div class="mb-8">
+          <div class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-96 flex items-center justify-center text-gray-500">
+            Featured Image
+          </div>
+        </div>
+        
+        <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+          {latestArticle.excerpt}
+        </p>
+        
+        <div class="mt-12 p-6 bg-white rounded-xl shadow-lg">
+          <h3 class="text-2xl font-bold text-[#0f172a] mb-4">Key Highlights:</h3>
+          <ul class="space-y-3">
+            {highlights.map((highlight, index) => (
+              <li key={index} class="flex items-start">
+                <i class="fas fa-check-circle text-[#22c55e] mt-1 mr-3 text-xl"></i>
+                <span class="text-gray-700">{highlight}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expert Analysis -->
+  <section class="py-16 bg-[#0f172a]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-gradient-to-r from-[#1e293b] to-[#0f172a] rounded-2xl p-8 md:p-12 border border-gray-800">
+          <div class="flex items-start mb-6">
+            <div class="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 flex-shrink-0" />
+            <div class="ml-4">
+              <h3 class="text-2xl font-bold text-white">Expert Take</h3>
+              <p class="text-[#22c55e] font-semibold">Mia Thompson, Senior Analyst</p>
+            </div>
+          </div>
+          
+          <blockquote class="text-xl italic text-gray-200 pl-4 border-l-4 border-[#22c55e]">
+            "{expertOpinion.quote}"
+          </blockquote>
+          
+          <div class="mt-8 flex justify-end">
+            <button class="px-6 py-2 border border-[#22c55e] text-[#22c55e] hover:bg-[#22c55e] hover:text-white rounded-full transition-colors duration-300">
+              Read More Analysis
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trending Topics -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-[#0f172a] text-center mb-12">Trending Topics</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gradient-to-br from-[#0f172a] to-[#1e293b] rounded-2xl p-6 text-white transform transition-transform duration-300 hover:scale-105">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-trophy text-[#22c55e] text-xl mr-3"></i>
+            <h3 class="text-xl font-bold">Playoff Predictions</h3>
+          </div>
+          <p class="text-gray-300 mb-4">Expert forecasts for the upcoming playoff rounds</p>
+          <button class="text-[#22c55e] font-semibold flex items-center">
+            Explore <i class="fas fa-arrow-right ml-2"></i>
+          </button>
+        </div>
+        
+        <div class="bg-gradient-to-br from-[#22c55e] to-[#15803d] rounded-2xl p-6 text-white transform transition-transform duration-300 hover:scale-105">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-users text-white text-xl mr-3"></i>
+            <h3 class="text-xl font-bold">Player Trades</h3>
+          </div>
+          <p class="text-white/90 mb-4">Latest moves in the NBA free agency market</p>
+          <button class="text-white font-semibold flex items-center">
+            Explore <i class="fas fa-arrow-right ml-2"></i>
+          </button>
+        </div>
+        
+        <div class="bg-gradient-to-br from-[#0f172a] to-[#1e293b] rounded-2xl p-6 text-white transform transition-transform duration-300 hover:scale-105">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-chart-line text-[#22c55e] text-xl mr-3"></i>
+            <h3 class="text-xl font-bold">Statistical Breakdowns</h3>
+          </div>
+          <p class="text-gray-300 mb-4">Deep dive into player and team performance metrics</p>
+          <button class="text-[#22c55e] font-semibold flex items-center">
+            Explore <i class="fas fa-arrow-right ml-2"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter CTA -->
+  <section class="py-20 bg-gradient-to-r from-[#0f172a] to-[#1e293b]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Stay Ahead of the Game</h2>
+        <p class="text-xl text-gray-300 mb-8">Get the latest basketball news delivered straight to your inbox</p>
+        <div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+          <input 
+            type="email" 
+            placeholder="Your email address" 
+            class="flex-grow px-6 py-4 rounded-full text-[#0f172a] focus:outline-none focus:ring-2 focus:ring-[#22c55e]"
+          />
+          <button class="px-8 py-4 bg-[#22c55e] hover:bg-green-600 text-white font-bold rounded-full transition-colors duration-300 whitespace-nowrap">
+            Subscribe Now
+          </button>
+        </div>
+        <p class="text-gray-400 mt-4 text-sm">We respect your privacy. Unsubscribe at any time.</p>
+      </div>
+    </div>
+  </section>
+</Layout>

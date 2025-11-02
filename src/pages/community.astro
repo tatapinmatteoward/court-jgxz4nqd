@@ -1,0 +1,211 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Join the CourtVision Community";
+const pageDescription = "Connect with fellow basketball enthusiasts, share insights, and discuss the latest games and analyses from CourtVision Daily. Dive into lively debates and build lasting connections in our vibrant online hub.";
+
+const features = [
+  {
+    icon: "fas fa-comments",
+    title: "Real-Time Discussions",
+    text: "Chat about live games, player performances, and breaking news with like-minded fans."
+  },
+  {
+    icon: "fas fa-pen-fancy",
+    title: "Share Your Expertise",
+    text: "Post articles, memes, or analyses on our forums and get feedback from the community."
+  },
+  {
+    icon: "fas fa-calendar-alt",
+    title: "Exclusive Events",
+    text: "Participate in AMAs with basketball pros, prediction contests, and virtual watch parties."
+  },
+  {
+    icon: "fas fa-users",
+    title: "Build Connections",
+    text: "Follow users, join groups focused on your favorite teams or topics."
+  }
+];
+
+const testimonials = [
+  {
+    name: "Marcus Johnson",
+    role: "Basketball Analyst",
+    content: "This community transformed how I consume basketball content. The depth of discussion is unmatched!",
+    avatar: "MJ"
+  },
+  {
+    name: "Sarah Williams",
+    role: "College Scout",
+    content: "I've made lifelong friends here. The networking opportunities are incredible.",
+    avatar: "SW"
+  },
+  {
+    name: "David Chen",
+    role: "Youth Coach",
+    content: "The educational content shared by members has helped me improve my coaching strategies.",
+    avatar: "DC"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-br from-[#0f172a] to-[#1e293b] py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgxNSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEuNSIgZmlsbD0iIzIyYzU1ZSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Join the <span class="text-[#22c55e]">CourtVision</span> Community
+        </h1>
+        <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+          Connect with fellow basketball enthusiasts, share insights, and discuss the latest games and analyses from CourtVision Daily. 
+          Dive into lively debates and build lasting connections in our vibrant online hub.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-[#22c55e] hover:bg-green-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg shadow-green-500/20">
+            Join Now
+          </button>
+          <button class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#0f172a] font-bold py-3 px-8 rounded-full transition-all duration-300">
+            View Forums
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Welcome Section -->
+  <section class="py-20 bg-gradient-to-b from-transparent to-[#0f172a]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Welcome to the CourtVision Community</h2>
+        <div class="w-24 h-1 bg-[#22c55e] mx-auto"></div>
+      </div>
+      
+      <div class="max-w-4xl mx-auto bg-[#1e293b] rounded-2xl p-8 md:p-12 shadow-xl border border-[#334155]">
+        <div class="flex items-start mb-8">
+          <div class="mr-6 mt-2 text-[#22c55e] text-3xl">
+            <i class="fas fa-basketball-ball"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-4">Ignite Your Passion for Basketball</h3>
+            <p class="text-gray-300 text-lg leading-relaxed">
+              At CourtVision Daily, we're more than just a source for insights—we're a thriving community of hoops fans, analysts, and players. 
+              Whether you're breaking down the latest NBA trades, debating All-Star selections, or sharing your pickup game stories, 
+              this is your space to connect and converse.
+            </p>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          <div class="bg-[#0f172a] p-6 rounded-xl border border-[#334155]">
+            <h4 class="text-xl font-bold text-white mb-3 flex items-center">
+              <i class="fas fa-trophy text-[#22c55e] mr-3"></i>
+              Community Driven
+            </h4>
+            <p class="text-gray-400">
+              Your voice matters in shaping discussions around basketball's biggest moments. 
+              We're constantly evolving based on community feedback and engagement.
+            </p>
+          </div>
+          
+          <div class="bg-[#0f172a] p-6 rounded-xl border border-[#334155]">
+            <h4 class="text-xl font-bold text-white mb-3 flex items-center">
+              <i class="fas fa-lightbulb text-[#22c55e] mr-3"></i>
+              Expert Insights
+            </h4>
+            <p class="text-gray-400">
+              Connect with seasoned analysts, former players, and industry professionals 
+              who enrich our community with their knowledge and experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 bg-[#0f172a]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Why Join Us?</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">Discover what makes our community the premier destination for basketball enthusiasts</p>
+        <div class="w-24 h-1 bg-[#22c55e] mx-auto mt-4"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {features.map((feature, index) => (
+          <div 
+            key={index} 
+            class="bg-gradient-to-br from-[#1e293b] to-[#0f172a] rounded-2xl p-6 border border-[#334155] hover:border-[#22c55e] transition-all duration-300 transform hover:-translate-y-2 group"
+          >
+            <div class="w-14 h-14 rounded-full bg-[#0f172a] flex items-center justify-center mb-6 group-hover:bg-[#22c55e] transition-colors duration-300">
+              <i class={`${feature.icon} text-2xl text-[#22c55e] group-hover:text-white`}></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">{feature.title}</h3>
+            <p class="text-gray-400">{feature.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-gradient-to-b from-[#0f172a] to-transparent">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Community Voices</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">Hear from members who have found their basketball family here</p>
+        <div class="w-24 h-1 bg-[#22c55e] mx-auto mt-4"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div 
+            key={index} 
+            class="bg-[#1e293b] rounded-2xl p-8 border border-[#334155] hover:border-[#22c55e] transition-all duration-300"
+          >
+            <div class="flex items-center mb-6">
+              <div class="w-16 h-16 rounded-full bg-[#22c55e] flex items-center justify-center text-white font-bold text-lg mr-4">
+                {testimonial.avatar}
+              </div>
+              <div>
+                <h4 class="font-bold text-white text-lg">{testimonial.name}</h4>
+                <p class="text-gray-400 text-sm">{testimonial.role}</p>
+              </div>
+            </div>
+            <p class="text-gray-300 italic">"{testimonial.content}"</p>
+            <div class="flex mt-4">
+              {[...Array(5)].map((_, i) => (
+                <i key={i} class="fas fa-star text-yellow-400"></i>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-[#0f172a] to-[#1e293b]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Join the Conversation?</h2>
+        <p class="text-gray-300 text-xl mb-10 max-w-2xl mx-auto">
+          Become part of the most engaging basketball community where every voice matters and every insight counts.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-[#22c55e] hover:bg-green-600 text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg shadow-green-500/30">
+            Create Your Account
+          </button>
+          <button class="bg-transparent border-2 border-[#22c55e] text-[#22c55e] hover:bg-[#22c55e] hover:text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300">
+            Explore Forums
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,186 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "CourtVision Daily - Home";
+const pageDescription = "Immerse yourself in the fast-paced world of basketball with CourtVision Daily, your go-to source for expert analysis, breaking news, and in-depth insights that keep you ahead of the game.";
+
+const trendingTopics = [
+  {
+    id: 1,
+    title: "LeBron James drops 40 in clutch performance",
+    excerpt: "Analyze the stats that sealed the win.",
+    category: "Breaking News"
+  },
+  {
+    id: 2,
+    title: "Rookie sensation turning heads with gravity-defying dunks",
+    excerpt: "Meet the player everyone's talking about.",
+    category: "Player Spotlight"
+  },
+  {
+    id: 3,
+    title: "Will the Lakers make a blockbuster move before the deadline?",
+    excerpt: "Our experts break down the possibilities.",
+    category: "Trade Rumors"
+  }
+];
+
+const features = [
+  {
+    icon: "fas fa-chart-line",
+    title: "In-depth Game Breakdowns",
+    description: "Using advanced analytics to dissect every play."
+  },
+  {
+    icon: "fas fa-newspaper",
+    title: "Breaking News Coverage",
+    description: "Stay ahead with real-time updates."
+  },
+  {
+    icon: "fas fa-trophy",
+    title: "Player Performance Insights",
+    description: "Track stats and trends with precision."
+  }
+];
+
+const testimonials = [
+  {
+    quote: "CourtVision Daily has transformed how I watch basketball.",
+    author: "Sarah Johnson",
+    role: "NBA Analyst"
+  },
+  {
+    quote: "The deepest insights I've found anywhere online.",
+    author: "Michael Chen",
+    role: "College Basketball Writer"
+  }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-r from-slate-900 to-emerald-900 py-24 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9IiNmZmYiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=')]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-3xl">
+        <span class="inline-block px-4 py-1 bg-emerald-500 text-white text-sm font-semibold rounded-full mb-4 animate-pulse">New Today</span>
+        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+          Welcome to <span class="text-emerald-400">CourtVision</span> Daily
+        </h1>
+        <p class="text-xl text-slate-200 mb-8 max-w-2xl">
+          Your Daily Source for Basketball Insights and Analysis
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <button class="px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-white font-bold rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+            Get Latest Updates
+          </button>
+          <button class="px-8 py-3 bg-transparent border-2 border-white text-white hover:bg-white hover:text-slate-900 font-bold rounded-lg transition-all duration-300">
+            Explore Topics
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trending Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">What's Hot Right Now</h2>
+        <div class="w-24 h-1 bg-emerald-500 mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {trendingTopics.map((topic) => (
+          <div key={topic.id} class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <div class="p-6">
+              <span class="inline-block px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-semibold rounded-full mb-3">
+                {topic.category}
+              </span>
+              <h3 class="text-xl font-bold text-slate-900 mb-3">{topic.title}</h3>
+              <p class="text-slate-600 mb-4">{topic.excerpt}</p>
+              <button class="text-emerald-600 font-semibold hover:text-emerald-800 flex items-center">
+                Read More
+                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-16 bg-slate-900 text-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Why CourtVision?</h2>
+        <p class="text-slate-300 max-w-2xl mx-auto">
+          We blend athletic prowess with modern analytics to deliver unmatched basketball coverage
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        {features.map((feature, index) => (
+          <div key={index} class="text-center p-8 rounded-xl bg-slate-800 hover:bg-slate-700 transition-all duration-300">
+            <div class="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <i class={`${feature.icon} text-white text-2xl`}></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4">{feature.title}</h3>
+            <p class="text-slate-300">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 bg-gradient-to-br from-slate-50 to-slate-100">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">What Our Readers Say</h2>
+        <div class="w-24 h-1 bg-emerald-500 mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {testimonials.map((testimonial, index) => (
+          <div key={index} class="bg-white p-8 rounded-xl shadow-lg">
+            <div class="text-yellow-400 mb-4">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="text-slate-700 italic mb-6">"{testimonial.quote}"</p>
+            <div>
+              <p class="font-bold text-slate-900">{testimonial.author}</p>
+              <p class="text-slate-500 text-sm">{testimonial.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-emerald-500 to-emerald-700">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Elevate Your Basketball Game?</h2>
+      <p class="text-emerald-100 max-w-2xl mx-auto mb-8 text-lg">
+        Join thousands of basketball enthusiasts who rely on CourtVision Daily for the best insights and analysis.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <button class="px-8 py-3 bg-white text-emerald-700 hover:bg-emerald-50 font-bold rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+          Subscribe Now
+        </button>
+        <button class="px-8 py-3 bg-transparent border-2 border-white text-white hover:bg-white hover:text-emerald-700 font-bold rounded-lg transition-all duration-300">
+          View Premium Content
+        </button>
+      </div>
+    </div>
+  </section>
+</Layout>

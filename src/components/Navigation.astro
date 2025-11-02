@@ -1,0 +1,89 @@
+---
+// Frontmatter
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/latest-news', label: 'Latest News' },
+  { href: '/player-profiles', label: 'Player Profiles' },
+  { href: '/game-analysis', label: 'Game Analysis' },
+  { href: '/community', label: 'Community' },
+  { href: '/blog', label: 'Blog' }
+];
+---
+
+<nav class="bg-slate-900">
+  <div class="container mx-auto px-4 py-4">
+    <div class="flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold text-emerald-500">CourtVision Daily</a>
+      
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex gap-6">
+        {navItems.map((item) => (
+          <a 
+            href={item.href} 
+            class="text-white hover:text-emerald-400 transition-colors duration-300"
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-button" class="md:hidden text-white">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 flex flex-col gap-4">
+      {navItems.map((item) => (
+        <a 
+          href={item.href} 
+          class="text-white hover:text-emerald-400 transition-colors duration-300 py-2"
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<!-- Client-side JavaScript for mobile toggle -->
+<script>
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+  
+  if (button && menu) {
+    button.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  }
+</script>
+
+<style>
+  nav {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  a:hover {
+    text-decoration: none;
+    transform: translateY(-2px);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  @media (max-width: 768px) {
+    .mobile-menu {
+      animation: slideDown 0.3s ease-out;
+    }
+    
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+</style>

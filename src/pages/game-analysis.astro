@@ -1,0 +1,253 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Game Analysis: Unpacking the Thrills of Recent NBA Matchups";
+const pageDescription = "Explore in-depth breakdowns of the latest NBA games on CourtVision Daily. From star player performances to tactical breakdowns, get the insights that elevate your basketball knowledge.";
+
+const featuredGames = [
+  {
+    id: 1,
+    title: "Lakers vs. Warriors: A Clash of Titans",
+    score: "112-108",
+    winner: "Lakers",
+    keyInsight: "The Lakers' zone defense stifled the Warriors' motion offense, forcing 18 turnovers.",
+    summary: "LeBron James delivered a triple-double with 28 points, 12 rebounds, and 11 assists. Golden State's Curry exploded for 37 points, but costly turnovers in the fourth quarter cost them the game.",
+    date: "2023-10-15"
+  },
+  {
+    id: 2,
+    title: "Celtics vs. Heat: Battle for Eastern Conference",
+    score: "104-98",
+    winner: "Celtics",
+    keyInsight: "Jayson Tatum's clutch shooting in the final minutes sealed the victory.",
+    summary: "Boston's dominant defense and timely three-pointers from Tatum helped secure a crucial win. Miami's Jimmy Butler led with 31 points, but couldn't overcome Boston's team effort.",
+    date: "2023-10-14"
+  },
+  {
+    id: 3,
+    title: "Nets vs. Bulls: Young Stars Shine",
+    score: "115-103",
+    winner: "Nets",
+    keyInsight: "Kevin Durant's efficient scoring in the paint was the difference maker.",
+    summary: "Brooklyn's young core dominated the paint despite strong defensive pressure from Chicago. Durant's 29 points helped the Nets secure their fourth consecutive victory.",
+    date: "2023-10-13"
+  }
+];
+
+const analysisArticles = [
+  {
+    id: 1,
+    title: "Defensive Schemes That Changed the Game",
+    excerpt: "How zone defenses and switching schemes impacted recent matchups.",
+    readTime: "5 min read",
+    category: "Tactics"
+  },
+  {
+    id: 2,
+    title: "Statistical Breakdown: Player Performance Trends",
+    excerpt: "Deep dive into player metrics that predict game outcomes.",
+    readTime: "7 min read",
+    category: "Analytics"
+  },
+  {
+    id: 3,
+    title: "Injury Impact: How Absences Shape Team Dynamics",
+    excerpt: "Analyzing how key player absences affected recent game outcomes.",
+    readTime: "6 min read",
+    category: "Injuries"
+  },
+  {
+    id: 4,
+    title: "Playoff Preview: Early Season Trends",
+    excerpt: "Predicting which teams are positioned for a deep postseason run.",
+    readTime: "8 min read",
+    category: "Preview"
+  }
+];
+
+const statsData = [
+  { label: "Games Analyzed", value: "127" },
+  { label: "Player Insights", value: "89" },
+  { label: "Tactical Breakdowns", value: "54" },
+  { label: "Season Updates", value: "203" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Hero Section -->
+  <div class="relative bg-gradient-to-r from-slate-900 to-emerald-700 py-20 overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiIGZpbGw9IiNmZmYiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiLz48L3N2Zz4=')]"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Game Analysis: <br />
+          <span class="text-emerald-300">Unpacking the Thrills</span> of Recent NBA Matchups
+        </h1>
+        
+        <p class="text-xl text-slate-200 mb-10 max-w-2xl mx-auto">
+          Explore in-depth breakdowns of the latest NBA games on CourtVision Daily. From star player performances to tactical breakdowns, get the insights that elevate your basketball knowledge.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Latest Analysis
+          </button>
+          <button class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-slate-900 font-bold py-3 px-8 rounded-full transition-all duration-300">
+            View All Games
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Section -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {statsData.map((stat) => (
+          <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+            <div class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">{stat.value}</div>
+            <div class="text-slate-600">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Analysis Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Latest Game Breakdowns</h2>
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+          Dive into our most recent analyses that reveal the strategic depth and human drama of NBA action
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {featuredGames.map((game) => (
+          <div key={game.id} class="bg-gradient-to-br from-slate-50 to-slate-100 rounded-2xl shadow-xl overflow-hidden transform transition-transform hover:scale-105">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="inline-block bg-emerald-100 text-emerald-800 text-sm font-semibold px-3 py-1 rounded-full">
+                  {game.winner} Victory
+                </span>
+                <span class="text-slate-500 text-sm">{game.date}</span>
+              </div>
+              
+              <h3 class="text-xl font-bold text-slate-900 mb-3">{game.title}</h3>
+              <div class="text-3xl font-bold text-slate-900 mb-4">{game.score}</div>
+              
+              <div class="mb-4">
+                <div class="flex items-center mb-2">
+                  <i class="fas fa-lightbulb text-emerald-600 mr-2"></i>
+                  <span class="font-semibold text-slate-800">Key Insight:</span>
+                </div>
+                <p class="text-slate-700">{game.keyInsight}</p>
+              </div>
+              
+              <p class="text-slate-600 mb-6">{game.summary}</p>
+              
+              <button class="w-full bg-slate-900 hover:bg-slate-800 text-white font-medium py-2 rounded-lg transition-colors">
+                Read Full Analysis
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Section -->
+  <section class="py-20 bg-slate-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">In-Depth Analysis</h2>
+        <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+          Explore our comprehensive articles covering all aspects of NBA strategy, performance, and trends
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {analysisArticles.map((article) => (
+          <div key={article.id} class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow group">
+            <div class="h-48 bg-gradient-to-r from-slate-700 to-emerald-700 group-hover:opacity-90 transition-opacity"></div>
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-3">
+                <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-semibold px-2 py-1 rounded-full">
+                  {article.category}
+                </span>
+                <span class="text-slate-500 text-sm">{article.readTime}</span>
+              </div>
+              
+              <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors">
+                {article.title}
+              </h3>
+              
+              <p class="text-slate-600 mb-4">{article.excerpt}</p>
+              
+              <button class="text-emerald-600 font-medium flex items-center group-hover:text-emerald-700 transition-colors">
+                Read More
+                <i class="fas fa-arrow-right ml-2 text-sm"></i>
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-slate-900 to-emerald-800">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Stay Ahead of the Game</h2>
+        <p class="text-xl text-slate-200 mb-10 max-w-2xl mx-auto">
+          Join thousands of basketball enthusiasts who rely on CourtVision Daily for the most insightful NBA coverage
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <button class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+            Subscribe for Daily Updates
+          </button>
+          <button class="bg-transparent border-2 border-white text-white hover:bg-white hover:text-slate-900 font-bold py-3 px-8 rounded-full transition-all duration-300">
+            View Premium Analysis
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="bg-slate-900 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <h3 class="text-2xl font-bold text-emerald-400 mb-2">CourtVision Daily</h3>
+          <p class="text-slate-400">Your Daily Source for Basketball Insights and Analysis</p>
+        </div>
+        
+        <div class="flex space-x-6">
+          <a href="#" class="text-slate-400 hover:text-white transition-colors">
+            <i class="fab fa-twitter text-xl"></i>
+          </a>
+          <a href="#" class="text-slate-400 hover:text-white transition-colors">
+            <i class="fab fa-facebook text-xl"></i>
+          </a>
+          <a href="#" class="text-slate-400 hover:text-white transition-colors">
+            <i class="fab fa-instagram text-xl"></i>
+          </a>
+          <a href="#" class="text-slate-400 hover:text-white transition-colors">
+            <i class="fab fa-youtube text-xl"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="border-t border-slate-800 mt-8 pt-8 text-center text-slate-500">
+        <p>&copy; {new Date().getFullYear()} CourtVision Daily. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
